@@ -1,0 +1,6 @@
+---
+  url: "http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.raw.tar.gz"
+  distribution: "centos"
+  release: "7"
+  description: "Centos 7 Cloud x86_64"
+  arch: "x86_64"

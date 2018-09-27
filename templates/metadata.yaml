@@ -1,0 +1,42 @@
+architecture: "{{ arch }}"
+creation_date: {{ timestamp }}
+properties:
+ architecture: "{{ arch }}"
+ description: "{{ description }} ({{ date }})"
+ os: "{{ distribution }}"
+ release: "{{ release }}"
+templates:
+    /etc/hostname:
+        when:
+            - create
+            - copy
+        template: hostname.tpl
+    /var/lib/cloud/seed/nocloud-net/meta-data:
+        when:
+            - create
+            - copy
+        template: cloud-init-meta.tpl
+    /var/lib/cloud/seed/nocloud-net/network-config:
+        when:
+            - create
+            - copy
+        template: cloud-init-network.tpl
+    /var/lib/cloud/seed/nocloud-net/user-data:
+        when:
+            - create
+            - copy
+        template: cloud-init-user.tpl
+        properties:
+            default: |
+                #cloud-config
+                {}
+    /var/lib/cloud/seed/nocloud-net/vendor-data:
+        when:
+            - create
+            - copy
+        template: cloud-init-vendor.tpl
+        properties:
+            default: |
+                #cloud-config
+                {}
+

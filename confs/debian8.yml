@@ -1,0 +1,6 @@
+---
+  url: "https://cdimage.debian.org/cdimage/openstack/current-8/debian-8-openstack-amd64.raw"
+  distribution: "debian"
+  release: "8"
+  description: "Debian 8 Cloud amd64"
+  arch: "amd64"
