@@ -1,3 +1,5 @@
 .idea
-
+env/
 metadata/metadata.yaml
+downloads/
+images/

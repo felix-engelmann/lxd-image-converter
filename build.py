@@ -69,6 +69,13 @@ def extract_rootfs(file,osname):
         else:
             print("using already unpacked image")
 
+    if file.endswith(".raw.xz"):
+        rawfile = os.path.join(DOWNLOAD_DIR, file[:-3])
+        if not os.path.exists(rawfile):
+            subprocess.run(["unxz", file], cwd=DOWNLOAD_DIR)
+        else:
+            print("using already unpacked image")
+
     if file.endswith(".raw"):
         rawfile = file
     #return rawfile
