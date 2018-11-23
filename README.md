@@ -1,10 +1,20 @@
-# lxd-image-builder
+# lxd-image-converter
 A small toolchain to generate lxd compatible images from raw cloud disk images
 
 To build a cloud like environment with lxd, it is helpful to have cloud-init support for your images.
 Unfortunately https://images.linuxcontainers.org does not have cloud-init enabled. Therefore this hacky tool exists.
 
 First it was intended to be done by a Makefile, but it turned out easier to write an imperative script.
+
+## Pre-built Images
+
+Generated images are provided at https://images.nlogn.org:8443/ and can be added to your lxd instance by
+
+    lxc remote add <alias> images.nlogn.org --public
+
+and launch an instance e.g. with
+
+    lxc launch <alias>:debian/8 <conatiner-name>
 
 ## Install
 
@@ -41,9 +51,15 @@ There will be two `tar` archives in the images folder. You can import them in to
 
     sudo lxc image import <...-metadata.tar.gz> <...-rootfs.tar.gz>
 
+## All in one
+
+To build and import all config files you can run
+
+    python make.py confs/
+
 ## Support
 
-So far, `.raw.tar.gz` and `.raw` images are supportet
+So far, `.raw.tar.gz`, `.raw.xz` and `.raw` images are supportet
 
 ## Process
 
