@@ -3,3 +3,4 @@ env/
 metadata/metadata.yaml
 downloads/
 images/
+*.pyc
