@@ -1,0 +1,6 @@
+---
+  url: "http://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.raw.tar.gz"
+  distribution: "centos"
+  release: "6"
+  description: "Centos 6 Cloud x86_64"
+  arch: "x86_64"

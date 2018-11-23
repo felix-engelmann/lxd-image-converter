@@ -1,0 +1,6 @@
+---
+  url: "https://download.fedoraproject.org/pub/fedora/linux/releases/27/CloudImages/x86_64/images/Fedora-Cloud-Base-27-1.6.x86_64.raw.xz"
+  distribution: "fedora"
+  release: "27"
+  description: "Fedora 27 Cloud x86_64"
+  arch: "x86_64"
