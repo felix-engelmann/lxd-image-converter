@@ -56,6 +56,28 @@ There will be two `tar` archives in the images folder. You can import them in to
 To build and import all config files you can run
 
     python make.py confs/
+    
+## Running inside a LXD container
+
+Unfortunately, extracting images requires the tool to mount them, which requires elevated permissions.
+To run this tool inside an lxd container itself, the container requires the access to the loop devices.
+According to with https://github.com/lxc/lxd/issues/2980 prepare your container with
+
+    lxc config device add <name> loop0 unix-block path=/dev/loop0
+    lxc config device add <name> loop1 unix-block path=/dev/loop1
+    lxc config device add <name> loop2 unix-block path=/dev/loop2
+    lxc config device add <name> loop3 unix-block path=/dev/loop3
+    lxc config device add <name> loop4 unix-block path=/dev/loop4
+    lxc config device add <name> loop5 unix-block path=/dev/loop5
+    lxc config device add <name> loop6 unix-block path=/dev/loop6
+    lxc config device add <name> loop7 unix-block path=/dev/loop7
+    
+    lxc config device add <name> loop-control unix-char path=/dev/loop-control
+    
+    lxc config set <name> raw.apparmor "mount,"
+    lxc config set <name> security.privileged true
+    
+    lxc restart <name>
 
 ## Support
 
