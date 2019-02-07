@@ -29,6 +29,10 @@ Then install the dependencies
 
 Then you are ready to go.
 
+### qcow2
+
+If you plan to convert images from `.qcow2`, please install `qemu-utils`
+
 ## Usage
 
 There are config files in the `confs` subfolder. Each `yaml` file has to container the following parameters:
