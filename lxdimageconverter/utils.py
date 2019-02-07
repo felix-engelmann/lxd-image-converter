@@ -73,6 +73,13 @@ def extract_rootfs(file,osname):
         else:
             print("using already unpacked image")
 
+    if file.endswith(".qcow2"):
+        rawfile = os.path.join(DOWNLOAD_DIR, "%s.raw" % file[:-6], )
+        if not os.path.exists(rawfile):
+            subprocess.run(["qemu-img", "convert", file, rawfile], cwd=DOWNLOAD_DIR)
+        else:
+            print("using already unpacked image")
+
     if file.endswith(".raw"):
         rawfile = file
     #return rawfile

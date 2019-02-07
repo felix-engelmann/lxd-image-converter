@@ -1,0 +1,6 @@
+---
+  url: "https://linuximages.de/openstack/arch/arch-openstack-LATEST-image-bootstrap.qcow2"
+  distribution: "arch"
+  release: "latest"
+  description: "Arch Linux Cloud x86_64"
+  arch: "x86_64"
