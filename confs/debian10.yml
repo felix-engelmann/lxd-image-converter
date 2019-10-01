@@ -1,0 +1,6 @@
+---
+  url: "https://cdimage.debian.org/cdimage/openstack/current-10/debian-10-openstack-amd64.raw"
+  distribution: "debian"
+  release: "10"
+  description: "Debian 10 Cloud amd64"
+  arch: "amd64"
